@@ -1,4 +1,8 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {}
+const nextConfig = {
+    env: {
+        KEY: process.env.KEY,
+      }
+}
 
 module.exports = nextConfig
