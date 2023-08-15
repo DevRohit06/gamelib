@@ -5,26 +5,26 @@ import {DiLinux} from "react-icons/di";
 export function cn(...inputs) {
   return twMerge(clsx(inputs))
 }
-export function platforms(name) {
+export function platforms(name, key) {
   if (name === "pc") {
-    return <BsWindows />;
+    return <BsWindows key={key} />;
   }
   if (name === "playstation") {
-    return <BsPlaystation />;
+    return <BsPlaystation key={key} />;
   }
   if (name === "xbox") {
-    return <BsXbox />;
+    return <BsXbox key={key} />;
   }
   if(name === "nintendo"){
-    return<BsNintendoSwitch/>;
+    return<BsNintendoSwitch key={key}/>;
   }
   if(name === "mac"){
-    return <BsApple/>
+    return <BsApple key={key}/>
   }
   if(name === "linux") {
-    return  <DiLinux />
+    return  <DiLinux key={key} />
   }
   if(name === "android"){
-    return   <BsAndroid/>
+    return   <BsAndroid key={key}/>
   }
 }

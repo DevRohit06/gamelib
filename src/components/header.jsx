@@ -31,9 +31,11 @@ export default function Headers() {
         </nav>
         
       </header>
-      <div className="absolute w-full h-full">
+
       {
+        
         sidebar ? 
+        <div className="absolute w-full h-full">
         <Sidebar className=" min-w-1/6 md:w-1/4 xl:w-1/6 sm:w-1/4 w-full" aria-label="Default sidebar example">
         <Sidebar.Items>
           <Sidebar.ItemGroup>
@@ -99,9 +101,10 @@ export default function Headers() {
           </Sidebar.ItemGroup>
         </Sidebar.Items>
       </Sidebar>
+      </div>
       : null
       }
-      </div>
+      
     </>
   );
 }

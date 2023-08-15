@@ -23,14 +23,18 @@ export default function Cards() {
       </h1>
       <div className="justify-center pt-8 flex gap-8 flex-wrap">
         {response.results.map((items) => {
+          const date = new Date(items.released)
+          const simplifiedDate = date.toLocaleDateString("en-us", {
+            dateStyle: "short"
+          });
           console.log(items.parent_platforms);
 
           return (
             <div
               key={items.id}
-              className="w-96 bg-white border border-gray-200 rounded-xl shadow-xl dark:bg-gray-800 dark:border-gray-700"
+              className="w-96 bg-white border border-gray-400 rounded-xl shadow-xl  dark:bg-gray-800 dark:border-gray-700"
             >
-              <a href="#">
+              <a href={`/games/${items.id}`}>
                 <img
                   className="rounded-t-xl w-full h-52 object-cover"
                   src={items.background_image}
@@ -39,7 +43,7 @@ export default function Cards() {
               </a>
               <div className="p-5 flex justify-between items-end">
                 <div>
-                  <a href="#">
+                  <a href={`/games/${items.id}`}>
                     <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                       {items.name}
                     </h5>
@@ -47,17 +51,22 @@ export default function Cards() {
                   <p className="flex gap-2 pb-1">
                     {items.parent_platforms.map((item) => {
                       const name = item?.platform.slug;
-                      return platforms(name);
+                      const key = item?.platform.id
+                      {
+                        return <div className="text-black dark:text-white">
+                          {platforms(name, key)}
+                        </div>
+                      }
                     })}
                   </p>
                   <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
-                    {items.released}
+                    {simplifiedDate}
                   </p>
                 </div>
                 <div>
                   <a
                     href="#"
-                    className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                    className="rounded-xl inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700  hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                   >
                     {items.metacritic}
                   </a>
