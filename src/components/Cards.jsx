@@ -11,16 +11,16 @@ export default function Cards() {
   }
   return (
     <>
-    <h1 className="text-black text-center font-bold text-3xl mt-12">All Games</h1>
+    <h1 className=" text-black text-center font-bold text-3xl mt-12">All Games</h1>
       <div className="justify-center pt-8 flex gap-8 flex-wrap">
         
         {
             response.results.map((items) => {
                 return (
-                    <div key={items.id} class=" bg-white border border-gray-200 rounded-xl shadow-xl dark:bg-gray-800 dark:border-gray-700">
+                    <div key={items.id} class="w-96 bg-white border border-gray-200 rounded-xl shadow-xl dark:bg-gray-800 dark:border-gray-700">
                     <a href="#">
                       <img
-                        class="rounded-t-lg w-96 object-cover h-52"
+                        class="rounded-t-xl w-full h-52 object-cover"
                         src={items.background_image}
                         alt=""
                       />
