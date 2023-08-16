@@ -12,7 +12,7 @@ export default function Headers() {
   }
   return (
     <>
-      <header className="  py-2 font-bold dark:bg-gray-800 bg-white">
+      <header className="  py-2 font-bold bg-transparent">
         <nav className="px-4 mx-auto flex justify-between items-center ">
           <div className="flex gap-2 items-center">
             <button onClick={activeSideBar} className="p-1  text-3xl text-black dark:text-white"><HiMenuAlt1/></button>
